@@ -22,18 +22,23 @@ const SignUp = () => {
     mutationKey: ["registerUser"],
     mutationFn: registerUser,
 
-    onSuccess: () => {
-      alert("회원가입 성공");
-      navigate("/");
+    onSuccess: (data) => {
+      if (data.result_code === "201") {
+        alert("회원가입 성공");
+        navigate("/signin");
+      } else if (data.result_code === "M001400") {
+        alert("이미 등록된 회원 정보입니다.");
+        console.error("회원가입 실패:", data.error.error_message);
+      }
     },
     onError: (error) => {
+      console.error("회원가입 실패:", error);
       alert("회원가입 실패");
       throw error;
     },
   });
 
   const onSubmit = (data: any) => {
-    console.log(data);
     mutation.mutate(data);
   };
 

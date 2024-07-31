@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cart from "./pages/Cart.tsx";
 import Home from "./pages/Home.tsx";
 import SignUp from "./pages/SignUp.tsx";
+import SignIn from "./pages/SignIn.tsx";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUp />,
+  },
+  {
+    path: "/signin",
+    element: <SignIn />,
   },
 ]);
 
