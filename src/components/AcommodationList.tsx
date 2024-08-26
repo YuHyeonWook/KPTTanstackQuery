@@ -31,7 +31,7 @@ const AcommodationList = () => {
             />
             <div className="flex flex-col gap-2 p-3">
               <div className="text-xl font-bold text-red-400">
-                <span>{accommodation.name}</span>
+                <span className="text-secondary">{accommodation.name}</span>
               </div>
               <div>
                 <span>{accommodation.address}</span>
